@@ -159,7 +159,7 @@ def main():
 		lec_name = true_urls[i][1]
 		# remove bad characters from lecture filename
 		lec_name = re.sub('[;/?:"=|*]','-',lec_name)
-		filename =  output_directory + '/' + lec_name + FILE_EXT
+		filename = f"{output_directory}/{i}_{lec_name}{FILE_EXT}"
 		if args.threaded:
 			threads.append(threading.Thread(target=download_file, args=(filename, video_urls[i])))
 		else:
